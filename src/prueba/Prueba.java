@@ -80,15 +80,7 @@ public class Prueba {
         System.out.println(c1.equals(c2));
     }
     
-    
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {  
-        //procesarMeses();
-        //ordenarLista();
-        
-        
+    public static void pruebaBucaramanga() {
         int [] lista = {8,9,3};
         int n = lista.length;
         String [] simbolo = new String [n];
@@ -121,5 +113,15 @@ public class Prueba {
             salida += lista[i] + simbolo[i];
         }
         System.out.println(salida);
+    }
+    
+    
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {  
+        //procesarMeses();
+        //ordenarLista();
+        pruebaBucaramanga();
     }    
 }
