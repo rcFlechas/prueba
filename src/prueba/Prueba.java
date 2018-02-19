@@ -84,9 +84,9 @@ public class Prueba {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {  
-        //procesarMeses();
+    public static void main(String[] args) {          
         ordenarLista();
+        procesarMeses();       
         
         
 //        int [] lista = {8,9,3};
