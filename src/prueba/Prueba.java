@@ -80,46 +80,48 @@ public class Prueba {
         System.out.println(c1.equals(c2));
     }
     
+    public static void pruebaBucaramanga() {
+        int [] lista = {8,9,3};
+        int n = lista.length;
+        String [] simbolo = new String [n];
+        int i,j,aux,izq,der,m;
+        
+        for (i = 1;  i < n; i++) {
+            aux = lista[i]; izq =0; der = i-1;
+            
+            while(izq<=der){
+                m=((izq+der)/2);
+                if(aux < lista[m]){
+                    der = m-1;
+                    simbolo[i-1] = "-";
+                }else{
+                    izq = m+1;
+                    simbolo[i-1] = "+";
+                }
+            }
+            j = i-1;
+            while(j>=izq){
+                lista[j+1] = lista[j];
+                j = j-1;
+            }
+            lista[izq] = aux;
+        }
+        simbolo[i-1] = "$";
+        
+        String salida = "";
+        for(i=0;i<n;i++){
+            salida += lista[i] + simbolo[i];
+        }
+        System.out.println(salida);
+    }
+    
     
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {          
+    public static void main(String[] args) {  
+        procesarMeses();
         ordenarLista();
-        procesarMeses();       
-        
-        
-//        int [] lista = {8,9,3};
-//        int n = lista.length;
-//        String [] simbolo = new String [n];
-//        int i,j,aux,izq,der,m;
-//        
-//        for (i = 1;  i < n; i++) {
-//            aux = lista[i]; izq =0; der = i-1;
-//            
-//            while(izq<=der){
-//                m=((izq+der)/2);
-//                if(aux < lista[m]){
-//                    der = m-1;
-//                    simbolo[i-1] = "-";
-//                }else{
-//                    izq = m+1;
-//                    simbolo[i-1] = "+";
-//                }
-//            }
-//            j = i-1;
-//            while(j>=izq){
-//                lista[j+1] = lista[j];
-//                j = j-1;
-//            }
-//            lista[izq] = aux;
-//        }
-//        simbolo[i-1] = "$";
-//        
-//        String salida = "";
-//        for(i=0;i<n;i++){
-//            salida += lista[i] + simbolo[i];
-//        }
-//        System.out.println(salida);
+        pruebaBucaramanga();
     }    
 }
